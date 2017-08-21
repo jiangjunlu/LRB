@@ -1,0 +1,407 @@
+body{
+	text-align:justify; text-justify:inter-ideograph;
+}
+/*首页中的CSS*/
+.xd_gs{/*下面固定格式*/
+	width: 25%; 
+	height: 50px; 
+	float: left; 
+	text-align: center;
+	
+	cursor: pointer;
+}
+.xd_tubiao{/*下面图标*/
+	top: 6px;
+	width: 28px;
+	height: 28px;
+	color: #929292;
+	
+}
+.sxd_fonts{/*下面字体*/
+	font-size: 12px;
+}
+
+.zd_nr{/*iframe格式*/
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	top: 50px;
+	bottom: 50px;
+	border: 0px;
+}
+
+.sd_mapmark{/*地图*/
+	width: 40px;
+	height: 40px;
+	color: white;
+}
+.sd_location{/*地图位置格式*/
+	width: 50px;
+	height: 50px;
+	
+	padding: 15px 15px 15px 15px;
+
+	text-align: center;
+	float: left;
+	cursor: pointer;
+}
+.shoucang_location{/*收藏位置格式*/
+	width: 50px;
+	height: 50px;
+	
+	padding: 15px 15px 15px 15px;
+
+	float: right;
+	cursor: pointer;
+}
+.sd_mingcheng{/*上面字体*/
+	position: absolute;
+	left: 50px;
+	right: 50px;
+	text-align: center;
+	line-height: 50px;
+	overflow: hidden;
+	
+	height:50px;
+	margin-right:10px;
+     font-size: 18px;
+	font-weight: bold;
+	color: white;
+	font-family:  "新宋体";
+}
+.addclass{/*点击增加class*/
+	color: #007aff;
+}
+.sd_bjcolor{
+	background: ;
+}
+.sd_tj{
+	font-style: normal;
+	font-size:10px;
+	color:#fff;
+	
+}
+
+
+/*首页CSS*/
+.shouye_tp{/*图片*/
+	width: 100%;
+	height: 500px;
+}
+a:hover{
+	text-decoration: none;
+}
+
+
+/*设置中的CSS*/
+.dl_user{/*user位置*/
+	position: absolute;
+	top: 90px;
+}
+.dl_password{/*password位置*/
+	position: absolute;
+	top: 144px;
+}
+.dl_login{/*登录格式*/
+	position: absolute;
+	top: 204px;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+.dl_login_location{/*登录位置*/
+	height: 24px;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+
+	text-align: center;
+	float: left;
+	cursor: pointer;
+}
+.dl_zcyz{/*注册忘记密码位置*/
+	width: 87%;
+	position: absolute;
+	left: 20px;
+	top: 250px;
+}
+
+/*注册的CSS*/
+.zc_zuyz{
+	position: absolute;
+	top: 254px;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+.zc_zuyz_location{/*登录位置*/
+	height: 24px;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+
+	text-align: center;
+	float: left;
+	cursor: pointer;
+}
+.zc_yzm{
+	position: absolute;
+	top: 198px;
+}
+.zc_yzm_location{/*验证位置*/
+	height: 24px;
+	width: 100%;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+}
+.zc_yzm_btn{/*短信验证位置*/
+	position: absolute;
+	top: 198px;
+	height: 24px;
+	width: 100%;
+	
+	padding-left: 200px;
+	padding-right: 0px;
+	float: right;
+}
+
+/*找回密码的CSS*/
+.zhmm_yzm{/*输入验证码位置*/
+	position: absolute;
+	top: 145px;
+	
+	height: 24px;
+	width: 100%;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+}
+.zhmm_yzm_btn{/*验证按钮位置*/
+	position: absolute;
+	top: 145px;
+	height: 24px;
+	width: 100%;
+	
+	padding-left: 200px;
+	padding-right: 0px;
+	float: right;
+}
+.zhmm_wc{
+	position: absolute;
+	top: 205px;
+	
+	height: 24px;
+	width: 100%;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+}
+/*首页的CSS*/
+.sy_tupian{
+	width: 100%;
+	height: 150px;
+	
+	position: absolute;
+	top: 50px;
+}
+.sy_tupian_gs{
+	width: 100%;
+	height: 150px;
+}
+.sy_fl{/*分类的位置*/
+	width: 100%;
+	height: 340px;
+	
+	position: absolute;
+	top: 200px;
+}
+.sy_fl_hang{/*行*/
+	width: 100%;
+	height: 100px;
+}
+.sy_fl_hang_lie{/*列*/
+	width: 33.3%;
+	height: 100px;
+	float: left;
+	
+	text-align: center;
+
+	line-height: 85px;
+	cursor: pointer;
+	
+	text-decoration: none;
+}
+.sy_fl_hang_lie_img{/*每列图片*/
+	width: 50px;
+	height: 50px;
+}
+.sy_fl_hang_lie_img_mc{/*每列图片下方字CSS*/
+	position: relative;
+	top: -45px;
+	font-size: 11px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	text-decoration: none;
+}
+/*村村通CSS*/
+.cct_liebiao{
+	position: absolute;
+	top: 50px;
+	
+	width: 100%;
+}
+/*要闻CSS*/
+.yw_sousuo{
+	width: 100%;
+	position: absolute;
+	
+	padding-left: 30px;
+	padding-right: 0px;
+}
+/*一点通*/
+.ydt_leixing{
+	width: 100%;
+}
+.ydt_leixing_geshi{
+	width: 50%;
+}
+.ydt_leixing_geshi_jg{
+	width: 16.6%;
+}
+.ydt_leixing_geshi2{
+	width: 25%;
+}
+.ydt_leixing_geshi3{
+	width: 20%;
+	font-size: 13px;
+}
+.ydt_leixing_suqiu{
+	position: absolute;
+	top: 80px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.ydt_leixing_geshi_active_none{
+	display: none;
+}
+.ydt_leixing_geshi_active_block{
+	display: block;
+}
+.ydt_leixing_sqyy_gs{
+	position: absolute;
+	top: 112px;
+	width: 100%;
+	height: 400px;
+}
+/*采购公告*/
+.cggg_liebiao{
+	position: absolute;
+	top: 125px;
+}
+
+/*个人信息*/
+.grxx_leixing_geshi{
+	width: 25%;
+}
+
+/*用户名*/
+.wd_user{
+	position: absolute;
+	top: 50px;
+	height: 80px;
+	width: 100%;
+}
+.wd_user_pic
+{
+	position: relative;
+	top: 15px;
+	left: 15px;
+	height: 50px;
+	width: 50px;
+}
+.wd_user_pic1
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	height: 50px;
+	width: 50px;
+}
+.wd_user_idd
+{
+	position: relative;
+	top: -20px;
+	left: 80px;
+	height: 20px;
+	width: 60px;
+	font-size: 13px;
+}
+.wd_user_id
+{
+	position: relative;
+	top: -40px;
+	left: 130px;
+	height: 20px;
+	width: 120px;
+	font-size: 13px;
+}
+
+
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.search {
+    height: 10px;
+}
+.box {
+	width: 100%;
+	height: 35px;
+	margin: 0px auto;
+	position: relative;
+	top: 0px;
+}
+.search_go{
+	float: right;
+	position: relative;
+	top: -49px;
+}
+.pic {
+	width: 100%;
+	height: 150px;
+	overflow: auto;
+}
+
+.pic ul li {
+	list-style-type: none;
+	width: 100%;
+	height: 150px;
+	position: relative;
+	overflow: auto;
+}
+.erweima_mingcheng{
+	position: absolute;
+	left:-120px;
+	top:5px;
+	right:0px;
+	/*marigin-left:15px;*/
+	text-align: center;
+	line-height: 50px;
+	
+	font-weight: 200;
+	color: white;
+	font-family:  "新宋体";
+}
+
+		.disa { 			
+			pointer-events: none; }
+		.disb{
+			pointer-events: auto;
+		}

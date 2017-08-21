@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <!-- <meta http-equiv="refresh" content="5">-->
+    <link rel="stylesheet" href="css/wode.css"/>
+    <title></title>
+    <script src="js/kind.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    		
+			function plusReady(){//主界面监听返回键
+				if(localStorage.uid!=undefined)document.getElementById('yhname').innerHTML=localStorage.uname;
+				else document.getElementById('yhname').innerHTML="";
+			plus.key.addEventListener('backbutton',function(){
+				if(confirm("确认退出？")){
+				plus.runtime.quit();
+			}},false);
+			}
+		
+			if(window.plus){
+				plusReady();
+			}
+			else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			
+		//点击两次返回键	
+		var first = null;
+		mui.back = function() {
+		//首次按键，提示‘再按一次退出应用’
+		if (!first) {
+		first = new Date().getTime();
+		//mui.toast('再按一次退出应用');
+		setTimeout(function() {
+		first = null;
+		}, 1000);
+		} else {
+		if (new Date().getTime() - first < 1000) {
+				if(confirm("确认退出？")){
+				plus.runtime.quit();
+			}
+		}
+		}
+		
+		};
+		</script> 
+    <script type="text/javascript">
+	function show()  //显示隐藏层和弹出层
+	{
+   	var hideobj=document.getElementById("hidebg");
+   	hideobj.style.display="block";  //显示隐藏层
+   	hideobj.style.height=document.documentElement.clientHeight+"px";  //设置隐藏层的高度为当前页面高度
+   	document.getElementById("hidebox").style.display="block";  //显示弹出层
+	}
+	function hide()  //去除隐藏层和弹出层
+	{
+   document.getElementById("hidebg").style.display="none";
+   document.getElementById("hidebox").style.display="none";
+	}
+	
+    function warn(){ alertxx("敬请期待");}
+	
+    </script>
+</head>
+<body>
+<div class="div0">
+	<div class="div2" onclick="islogined()">	
+		<div class="div21">
+			<a>用户名:
+			<span id="yhname" style="margin-left: 10%;"></span>
+			<!--<script>document.getElementById('user').innerHTML=localStorage.uname;</script>-->
+			</a>
+		</div>
+	   <div class="div22">
+	   		<button class="right-arrow1"></button>
+	   </div>
+	</div>
+	<div class="div3">
+	</div>
+	<div class="div4">
+		<div class="div41" onclick="isdl()">
+			<script>
+				function isdl(){if(localStorage.uid==undefined) alertxx("请先登录");else clickforward('GeRenDingDan.html');}
+			</script>
+			<a><span id="DingDan">个人订单</span></a>
+		</div>
+	   <div class="div42">
+	   		<button class="right-arrow" onclick=""></button>
+	   </div>
+	</div>
+	 <div class="div5" onclick="warn()">	
+		<div class="div51">
+			<a href="" style="color: #000000;"><span id="GeRenPingJia">个人评价</span></a>		
+		</div>
+	   <div class="div52">
+	   		<button class="right-arrow"></button>
+	   </div>
+	</div>
+	<div class="div6"onclick="warn()">	
+		<div class="div61">
+			<a href="" style="color: #000000;">
+				<span id="RuanJianPingJia">软件评价</span>
+			</a>		
+		</div>
+	   <div class="div62">
+	   		<button class="right-arrow" onclick="">
+	   		</button>
+	   </div>
+	</div>
+	<div class="div7">
+	</div>
+	<div id="hidebg"></div>
+	<div id="hidebox">
+		<button class="bt1" onClick="zx()">换个账号登录</button>
+		<button class="bt2" onClick="tc()">退出登录</button>
+	</div>
+	<div id="div8">
+	<button id="content" onClick="show()">退出登录</button>
+	</div>
+	<script>
+		function zx(){
+			hide();
+			if(localStorage.uid==undefined){
+				alertxx("您未登录");
+			}else{
+				localStorage.clear();
+				document.getElementById('yhname').innerHTML="";
+				alertxx("注销成功");
+			}
+		}
+		function tc(){
+			plus.runtime.quit();
+		}
+	</script>
+</div>	
+</body>
+<script>
+	function zhuxiao(){
+		//localStorage.uid.clear();
+		hide();
+		return;
+	}
+	function islogined(){
+		//alert(localStorage.uid);
+		if(localStorage.uid==undefined){
+			clickforward('denglu.html')
+		}
+		else{
+			alertxx("您已登录");return;
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <link rel="stylesheet" href="css/ChaXun.css" />
+		<link rel="stylesheet" href="plugins/kdniao/skin/kdniao.css" />
+		<title></title>
+		<script type="text/javascript" src="plugins/kdniao/jquery.min.js"></script>
+	    <script type="text/javascript" src="plugins/kdniao/kdniao.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/ymqh.js"></script>
+		<script src="js/kind.js"></script>
+		<script type="text/javascript">			
+			function plusReady(){
+				plus.key.addEventListener('backbutton',function(){
+					if(confirm("确认退出？")){
+					plus.runtime.quit();
+				}},false);
+			}
+		
+			if(window.plus){
+				plusReady();
+			}
+			else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			
+		//点击两次返回键	
+		var first = null;
+		mui.back = function() {
+		//首次按键，提示‘再按一次退出应用’
+		if (!first) {
+		first = new Date().getTime();
+		//mui.toast('再按一次退出应用');
+		setTimeout(function() {
+		first = null;
+		}, 1000);
+		} else {
+		if (new Date().getTime() - first < 1000) {
+				if(confirm("确认退出？")){
+				plus.runtime.quit();
+			}
+		}
+		}
+		
+		};
+		</script> 
+			  <script type="text/javascript">
+	function show()  //显示隐藏层和弹出层
+	{
+		if(document.getElementById('dingdanhao').value==""||document.getElementById('kuaidigongsi').value=="")
+		{
+			alertxx("订单编号和快递公司不能为空!");return;
+		}
+   	var hidebg=document.getElementById("hidebg");
+   	hidebg.style.display="block";  //显示隐藏层
+   	hidebg.style.height=document.documentElement.clientHeight+"px";  //设置隐藏层的高度为当前页面高度
+   	var hidediv=document.getElementById("hidediv");
+   	hidediv.style.display="block";  //显示隐藏层
+   	hidediv.style.height=document.documentElement.clientHeight+"px";  //设置隐藏层的高度为当前页面高度
+   	document.getElementById("hidediv").style.display="block";  //显示弹出层
+	}
+	function hide()  //去除隐藏层和弹出层
+	{
+ document.getElementById("hidebg").style.display="none";
+ document.getElementById("hidediv").style.display="none";
+	}
+    </script>
+    
+    <script type="text/javascript">	
+	var $$ = function (id) 
+	{ 
+    	return document.getElementById(id); 
+    } 
+    window.onload = function () 
+    { 
+		var btnSelect = $$("btn_select"); 
+		var curSelect = btnSelect.getElementsByTagName("span")[0]; 
+		var oSelect = btnSelect.getElementsByTagName("select")[0]; 
+		var aOption = btnSelect.getElementsByTagName("option"); 
+		oSelect.onchange = function () { 
+		var text=oSelect.options[oSelect.selectedIndex].text; 
+		curSelect.innerHTML = text; 
+	} 
+} 
+
+	</script>
+	<style type="text/css">
+    .inputstyle{
+    	margin: 4% 0  4%  0;
+       border: 1px solid rgb(180, 180, 180);      
+       width: 95%;
+       height: 60%;
+      font-size: 16px;
+      outline:none;
+      
+    }
+    select{padding-left: 33%;}
+    </style>
+	</head>
+
+	<body>
+	<div class="div0">
+	<div class="div1">	
+			<form action="" method="" style="width: 100%;">
+				<table style="width: 100%;">
+					<tr>
+						<td align="center" style="width: 30%;">订单编号:</td>
+						<td style="position: relative;">
+								<input id="dingdanhao" name="dingdanhao" class="inputstyle"/>
+								<script>if(localStorage.ddh!=undefined)document.getElementById('dingdanhao').value=localStorage.ddh;else document.getElementById('dingdanhao').value="";</script>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 30%;">快递公司:</td>
+						<td>
+						<!--<input class="inputstyle" type="text" value="圆通速递" id="kuaidigongsi" name="kuaidigongsi"/>-->
+						<!--<input class="inputstyle" type="text"  id="kuaidigongsi" name="kuaidigongsi"/>-->
+						<div class="btn-select" id="btn_select">
+						
+	                    <select id="kuaidigongsi" class="inputstyle">  
+						<option>京东快递</option> 
+						<option>中通速递</option> 
+						<option>申通快递</option>
+						<option>圆通速递</option>
+						<option>顺丰快递</option> 
+						<option>EMS</option> 
+						<option>韵达快递</option> 
+						<option>百世物流</option>
+						<option>天天快递</option>
+						</select> 
+						</div> 
+						<script>if(localStorage.kdgs!=undefined)document.getElementById('kuaidigongsi').value=localStorage.kdgs;</script>
+						</td>
+					</tr>
+					<tr style="border-bottom: none;">
+						<td colspan="2" align="center" style="width: 100%;">
+							<input id="buttonstyle" type="button" value="查 询" onclick="submitt()"/>
+						<script>
+							function submitt(){
+								if(plus.networkinfo.getCurrentType()==1){
+									alertxx("请连接网络");return;
+								}
+								//alert(plus.networkinfo.getCurrentType());
+								show();
+								localStorage.ddh=document.getElementById('dingdanhao').value;
+								localStorage.kdgs=document.getElementById('kuaidigongsi').value
+								kdniao.query(document.getElementById('dingdanhao').value,document.getElementById('kuaidigongsi').value);
+							}
+						</script>
+						</td>
+					</tr>
+				</table>
+			</form>		
+	</div>
+	<div id="hidebg"></div>
+    <div id="hidediv">
+    <div id="queren" style="font-size: 18px;"onclick="hide()">确认</div>
+    <!--快递查询接收容器-->
+    <div id="queryContext" class="flo"></div>
+    </div>
+	
+</div>
+	</body>
+<script type="text/javascript">
+	$(function(){
+		//如果使用页面自动加载，需要在页面加载中调用以下函数
+		kdniao.query(document.getElementById('dingdanhao').value,document.getElementById('kuaidigongsi').value);
+	});
+</script>
+</html>

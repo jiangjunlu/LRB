@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/xiadan.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/mybootstrap2.css"/>
+    <title></title>
+        <script src="js/ymqh.js"></script>
+    <script src="js/kind.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Ajax.js"></script>
+    <script src="js/jquery.min.js"></script>
+    		<script type="text/javascript">
+			function plusReady(){
+				plus.key.addEventListener("backbutton",function(e){
+					clickhide();
+				},false);
+			}
+		
+			if(window.plus){
+				plusReady();
+			}
+			else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+		</script>
+    <script type="text/javascript">
+    	function doSubmit2(){
+    		var dingjin_rule=/^[1-9]\d*(\.\d+)?$/;
+    		if(!dingjin_rule.test(document.getElementById('yongjin2').value)){
+	        alert("请输入正确的佣金格式");
+	        return;
+            }
+    		
+    		$.ajax({
+					url: 'http://59.110.31.72:80/LRB/php/xiadan.php',
+					type: 'post',
+					data: {
+						"userdianhua":localStorage.uid,
+						"xingming":localStorage.uname,
+						"dianhua":localStorage.uid,
+						"dizhi":$("#dizhi2").val(),
+						"yongjin":$("#yongjin2").val(),
+						"xiangqing":$("#xiangqing2").val()	
+					},
+					dataType: 'json',
+					success: function(data) {
+				//		alert(data.sql);
+						if(data.affected_rows>0){
+							clickback();
+							onwo("dingdan.html");
+						}else{
+							alert(data.affected_rows+"服务器故障");
+						}
+					},
+					error: function(data) {
+						alert("responseText"+data.responseText);
+					}
+				});
+    	}
+    	function doSubmit(){
+    		if(localStorage.uid==undefined){alertxx("未登录");return;}
+    		var mobile_rule = /^1[358]\d{9}$/;
+    		var dingjin_rule=/^[1-9]\d*(\.\d+)?$/;
+    		if(!mobile_rule.test(document.getElementById('dianhua').value)){
+	       alert("请输入正确的电话号码格式");
+	        return;
+            }
+    		if(!dingjin_rule.test(document.getElementById('yongjin').value)){
+	        alert("请输入正确的佣金格式");
+	        return;
+            }
+    		
+    		$.ajax({
+					url: 'http://59.110.31.72:80/LRB/php/xiadan.php',
+					type: 'post',
+					data: {
+						"userdianhua":localStorage.uid,
+						"xingming":$("#xingming").val(),
+						"dianhua":$("#dianhua").val(),
+						"dizhi":$("#dizhi").val(),
+						"yongjin":$("#yongjin").val(),
+						"xiangqing":$("#xiangqing").val()	
+					},
+					dataType: 'json',
+					success: function(data) {
+						if(data.affected_rows>0){
+							clickback();
+							onwo("dingdan.html");
+						}else{
+							alert(data.responseText);
+						}
+							
+					},
+					error: function(data) {
+						alert("error:服务器配置错误，请与技术人员联系"+data.responseText);
+					}
+				});
+    	}
+    </script>
+</head>
+<body>
+<div class="div0">
+	<div class="div1">
+		<div class="div11" onclick="clickback()">
+			<button class="add-button" onclick=""></button>
+		</div>
+		<div class="div12">发布下单</div>
+	</div>
+	
+	<ul class="nav nav-tabs ydt_leixing" style="text-align: center;position: fixed;z-index: 9999;top: 40px;">
+		  <li id="li_gr" role="presentation" style="background:#fff;" class="ydt_leixing_geshi" onclick="qh('li_gr','li_br','gr','br')">
+		  	<a href="#">个人下单</a>
+		  </li>
+		  <li id="li_br" role="presentation" style="background:#fff;" class="ydt_leixing_geshi active"  onclick="qh('li_br','li_gr','br','gr')">
+		  	<a href="#">别人下单</a>
+		  </li>
+	</ul>
+	
+	<div id="br" class="div2" style="position: relative;top: 45px;display: block;">
+		<div class="div21">
+			<form action="php/xiadan.php" method="post">
+				<table>
+					<tr>
+						<td align="center" style="width: 25%;">收件人姓名:</td>
+						<td>
+						<input  class="inputstyle" type="text" name="xingming" id="xingming">
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 25%;">收件人电话:</td>
+						<td>
+							<input class="inputstyle" type="text" name="dianhua" id="dianhua">
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="center" style="width: 25%;">佣金:</td>
+						<td>
+							<input class="inputstyle" type="text" name="yongjin" id="yongjin">
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="center" style="width: 25%;">送达地址:</td>
+						<td>
+							<input class="inputstyle" type="text" name="dizhi" id="dizhi">
+						</td>
+					</tr>
+					
+					<tr style="height: 100px;">
+						<td align="center" style="width: 25%;">订单详情:</td>
+						<td>
+							<textarea placeholder="请复制快递员发送给你的快递短信息" id="xiangqing" name="xiangqing" rows="" cols="" class="textareastyle"></textarea>
+						</td>
+					</tr>
+					
+					<tr style="border-bottom: none;">
+						<td colspan="2" align="center" style="width: 100%;">
+							<input onclick="doSubmit()" class="buttonstyle" type="button" value="确认发布" "/>
+						</td> 
+					</tr>
+				</table>
+			</form>		
+		</div>
+	</div>
+	
+	<div id="gr" class="div2" style="position: relative;top: 45px;display: none;">	
+		<div class="div21">
+			<form action="php/xiadan.php" method="post">
+				<table>
+					<tr>
+						<td align="center" style="width: 25%;">佣金:</td>
+						<td>
+							<input class="inputstyle" type="text" name="yongjin2" id="yongjin2">
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="center" style="width: 25%;">送达地址:</td>
+						<td>
+							<input class="inputstyle" type="text" name="dizhi2" id="dizhi2">
+						</td>
+					</tr>
+					
+					<tr style="height: 100px;">
+						<td align="center" style="width: 25%;">订单详情:</td>
+						<td>
+							<textarea id="xiangqing2" placeholder="请复制快递员发送给你的快递短信息" name="xiangqing" rows="" cols="" class="textareastyle"></textarea>
+						</td>
+					</tr>
+					
+					<tr style="border-bottom: none;">
+						<td colspan="2" align="center" style="width: 100%;">
+							<input onclick="doSubmit2()" class="buttonstyle" type="button" value="确认发布" "/>
+						</td> 
+					</tr>
+				</table>
+			</form>		
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+		function qh(idg,idb,dg,db){
+			document.getElementById(idg).setAttribute('class','ydt_leixing_geshi active');
+			document.getElementById(idb).setAttribute('class','ydt_leixing_geshi');
+			document.getElementById(db).style.display='none';
+			document.getElementById(dg).style.display='block';			
+		}
+	</script>
+</body>
+</html>

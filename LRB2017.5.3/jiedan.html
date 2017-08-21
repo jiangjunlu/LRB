@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/jiedan.css" rel="stylesheet">
+		<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
+		<script src="js/kind.js"></script>
+		<script src="js/mybootstrap.js"></script>
+		<script src="js/Ajax.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js" ></script>
+		<script type="text/javascript">	
+		function getQueryString(name) { 
+		        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		        var r = window.location.search.substr(1).match(reg); 
+		        if (r != null) return unescape(r[2]); 
+		        return null; 
+	   	}
+		function doSubmit(){
+			if(localStorage.uid==undefined){alertxx("未登录");return;}
+			$.ajax({
+					url: 'http://59.110.31.72:80/LRB/php/jiedan.php',
+					type: 'post',
+					data: {
+						"ddid":getQueryString('ddid'),
+						"userdianhua":localStorage.uid,
+						"f":"x"
+					},
+					dataType: 'json',
+					success: function(data) {
+						if(data.code>0){
+							clickback();
+							onwo("dingdan.html");
+						}else{
+							alert("亲,手慢被抢了~~");
+						}
+					},
+					error: function(data) {
+						alert("服务器爆炸了，赶快联系技术人员吧~")
+					}
+				});
+		}
+		window.onload=function(){
+			$.ajax({
+					url: 'http://59.110.31.72:80/LRB/php/jiedan.php',
+					type: 'post',
+					data: {
+						"ddid":getQueryString('ddid'),
+						"f":"d"
+					},
+					dataType: 'json',
+					success: function(data) {
+						$("#xingming").html(data.youjian_xingming);
+						$("#dianhua").html(data.youjian_dianhua);
+						$("#xiangqing").html(data.dingdan_xinxi);
+						$("#dizhi").html(data.songda_weizhi);
+						$("#yongjin").html(data.yongjin);
+					},
+					error: function(data) {
+						$("#msggg").html(data.responseText);
+				//	alert("error"+getQueryString('ddid'));
+					}
+				});
+				
+		}
+		function plusReady() {
+			plus.key.addEventListener("backbutton", function(e) {
+				clickhide();
+			}, false);
+		}
+
+		if(window.plus) {
+			plusReady();
+		} else {
+			document.addEventListener("plusready", plusReady, false);
+		}
+		
+		</script>
+	</head>
+
+	<body>
+		<!--<p id="msggg"></p>-->
+	<div class="div1">
+		<div class="div11" onclick="clickback()">
+		</div>
+		<div class="div12">订单详情</div>
+	</div>
+		
+		<div class="div2">	
+		<div class="div21">
+				<table>
+					<tr>
+						<td align="center" style="width: 25%;">收件人姓名:</td>
+						<td>
+						<p id="xingming"></p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 25%;">收件人电话:</td>
+						<td>
+							<p id="dianhua"></p>
+						</td>
+					</tr>
+					<tr style="height: 100px;">
+						<td align="center" style="width: 25%;">订单详情:</td>
+						<td>
+						 <p id="xiangqing"></p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 25%;">送达地址:</td>
+						<td>
+							<p id="dizhi"></p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 25%;">佣金:</td>
+						<td>
+							<p id="yongjin"></p>
+						</td>
+					</tr>
+				</table>	
+
+		</div>
+		
+    </div>
+		
+		<nav class="navbar navbar-fixed-bottom" >
+		  <div class="container-fluid row" >		  	
+		  		<button class="buttonstyle" onclick="doSubmit()" style="width:100%;height:40px;">确认接单</button>		 
+		  </div>
+		</nav>
+	</body>
+
+</html>

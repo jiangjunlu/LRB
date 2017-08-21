@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/shouye.css"/>
+    <link rel="stylesheet" href="css/mui.min.css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/mybootstrap2.css" rel="stylesheet">
+    <title></title>
+    <script src="js/ymqh.js"></script>
+    <script src="js/kind.js"></script>
+    <script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			function plusReady(){//主界面监听返回键
+			plus.key.addEventListener('backbutton',function(){
+				if(confirm("确认退出？")){
+					localStorage.clear();
+				plus.runtime.quit();
+			}},false);
+			//document.addEventListener('netchange',onloadtq,false);
+			}
+		
+			if(window.plus){
+				plusReady();
+			}
+			else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			
+		//点击两次返回键	
+		var first = null;
+		mui.back = function() {
+		//首次按键，提示‘再按一次退出应用’
+		if (!first) {
+		first = new Date().getTime();
+		//mui.toast('再按一次退出应用');
+		setTimeout(function() {
+		first = null;
+		}, 1000);
+		} else {
+		if (new Date().getTime() - first < 1000) {
+				if(confirm("确认退出？")){
+				localStorage.clear();
+				plus.runtime.quit();
+			}
+		}
+		}
+		
+		};
+		</script> 
+	</head>
+
+	<body>
+		 <!--<nav id="sy_nav" class="navbar navbar-default navbar-fixed-top" style="background: #00FFFF;display: block;">
+			<div class="container-fluid row">
+				<div class="sd_mingcheng">首页</div>
+			</div>
+		</nav>-->
+		<!--<div align="center"><img src="img/babasbsdbsdbsdb.jpg" height="150px" width="100%"/></div>-->
+		
+			<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop" style="height: 180px;">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a  id="id1">
+						<img id="id1" src="img/babasbsdbsdbsdb.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a id="id2">
+						<img src="img/banana.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a id="id3">
+						<img src="img/nfdmdmd.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a  id="id4">
+						<img id="4" src="img/bababab.jpg">
+					</a>
+				</div>
+				 <!--额外增加的一个节点(循环轮播：最后一个节点是第一张轮播)-->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a id="id5">
+						<img src="img/babasbsdbsdbsdb.jpg">
+					</a>
+				</div>
+			</div>
+		</div>
+	<script>
+		var gallery = mui('.mui-slider');
+			gallery.slider({
+			interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+	</script>
+	
+		<div class="Sdiv1">
+    	<div class="Sdiv11">
+    		<div class="Sdiv111"></div>
+    		<div class="Sdiv112"></div>
+    		<div class="Sdiv113"></div>
+    	</div>
+    	<div class="Sdiv12">
+    		<div class="Sdiv121">
+    			<div class="t0"></div>
+    			<div class="t1">派送时间</div>
+    			<div class="t2">上午:11:30-12:30</div>
+    			<div class="t3">下午:15:30-17:30</div>
+    		</div>
+    		<div class="Sdiv122">
+    		</div>
+    	</div>	
+    </div>	
+     <div class="Sdiv1">
+    	<div class="Sdiv11">
+    		<div class="Sdiv111"></div>
+    		<div class="Sdiv212"></div>
+    		<div class="Sdiv113"></div>
+    	</div>
+    	<div class="Sdiv22">
+    		<div class="Sdiv121">
+    			<div class="t0"></div>
+    			<div class="t1">微信推送</div>
+    			<div class="p2">lanrenbangfuwu</div>
+    		</div>
+    		<div class="Sdiv222">
+    		</div>
+    	</div>	
+    </div>	
+     <div class="Sdiv1">
+    	<div class="Sdiv11">
+    		<div class="Sdiv111"></div>
+    		<div class="Sdiv312"></div>
+    		<div class="Sdiv113"></div>
+    	</div>
+    	<div class="Sdiv32">
+    		<div class="Sdiv121">
+    			<div class="t0"></div>
+    			<div class="t1">联系我们</div>
+    			<div class="p2">15754312513</div>
+    		</div>
+    		<div class="Sdiv322">
+    		</div>
+    	</div>	
+    </div>	
+		
+		
+
+
+	</body>
+
+</html>

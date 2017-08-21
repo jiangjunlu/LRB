@@ -1,0 +1,252 @@
+{
+	"index.html": {
+		"resources": [
+			"fonts/glyphicons-halflings-regular.woff2",
+			"js/ymqh.js",
+			"css/index.css",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"css/bootstrap.min.css",
+			"index1.html",
+			"img/qianbi.png",
+			"img/naba.png",
+			"dingdan.html",
+			"xiadan.html",
+			"img/ewm.jpg",
+			"fonts/glyphicons-halflings-regular.woff",
+			"img/babasbsdbsdbsdb.jpg",
+			"img/bababab.jpg",
+			"img/nfdmdmd.jpg",
+			"js/kind.js",
+			"shouye.html",
+			"js/mui.min.js",
+			"img/banana.jpg",
+			"js/Ajax.js"
+		],
+		"refer": [
+			"shouye.html",
+			"dingdan.html",
+			"chaxun.html",
+			"wode.html",
+			"xiadan.html",
+			"dingdan.php"
+		]
+	},
+	"shouye.html": {
+		"refer": [
+			"dingdan.html"
+		],
+		"resources": [
+			"img/nfdmdmd.jpg",
+			"img/ewm.jpg",
+			"js/mui.min.js",
+			"img/qianbi.png",
+			"img/babasbsdbsdbsdb.jpg",
+			"img/naba.png",
+			"img/bababab.jpg",
+			"img/banana.jpg",
+			"js/ymqh.js",
+			"css/bootstrap-theme.min.css",
+			"css/bootstrap.min.css",
+			"css/index.css",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"js/kind.js",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"img/number1.png",
+			"img/number2.png",
+			"img/phone.png",
+			"img/weixin.png",
+			"img/number3.png",
+			"css/shouye.css",
+			"img/time.png"
+		]
+	},
+	"dingdan.html": {
+		"resources": [
+			"css/bootstrap.css",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"css/bootstrap.min.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"js/kind.js",
+			"js/mui.min.js",
+			"js/ymqh.js",
+			"css/index.css",
+			"js/jquery.min.js",
+			"php/dingdan.php",
+			"js/jquery.mobile-1.1.0.js",
+			"/php/dingdan.php",
+			"fonts/glyphicons-halflings-regular.woff"
+		],
+		"refer": [
+			"dingdanxq.html",
+			"querenjd.html",
+			"jiedan.html"
+		]
+	},
+	"chaxun.html": {
+		"resources": [
+			"js/ymqh.js",
+			"css/index.css",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"css/bootstrap.min.css",
+			"plugins/kdniao/skin/bg.png",
+			"plugins/kdniao/kdniao.js",
+			"plugins/kdniao/jquery.min.js",
+			"plugins/kdniao/skin/kdniao.css",
+			"css/ChaXun.css",
+			"js/mui.min.js",
+			"js/kind.js"
+		]
+	},
+	"wode.html": {
+		"resources": [
+			"css/wode.css",
+			"img/RightArrow.png",
+			"js/kind.js",
+			"js/mui.min.js",
+			"js/jquery.min.js",
+			"RuanJianPingJia.html"
+		],
+		"refer": [
+			"denglu.html",
+			"gerenpingjia.html",
+			"GeRenDingDan.html",
+			"RuanJianPingJia.html"
+		]
+	},
+	"xiadan.html": {
+		"resources": [
+			"js/mui.min.js",
+			"img/LeftArrow.png",
+			"css/xiadan.css",
+			"js/ymqh.js",
+			"js/kind.js",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"js/jquery.min.js",
+			"css/bootstrap.min.css",
+			"js/Ajax.js"
+		]
+	},
+	"dingdanxq.html": {
+		"resources": [
+			"fonts/glyphicons-halflings-regular.woff",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"js/kind.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"css/bootstrap.min.css",
+			"fonts/glyphicons-halflings-regular.woff2"
+		]
+	},
+	"querenjd.html": {
+		"resources": [
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"js/kind.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"fonts/glyphicons-halflings-regular.woff",
+			"css/bootstrap.min.css"
+		]
+	},
+	"denglu.html": {
+		"resources": [
+			"img/LeftArrow.png",
+			"css/DengLu.css",
+			"js/kind.js",
+			"js/mui.min.js",
+			"js/Ajax.js"
+		],
+		"refer": [
+			"zhuce.html",
+			"wode.html"
+		]
+	},
+	"zhuce.html": {
+		"resources": [
+			"css/ZhuCe.css",
+			"img/LeftArrow.png",
+			"js/kind.js",
+			"js/mui.min.js",
+			"js/Ajax.js"
+		]
+	},
+	"gerenpingjia.html": {
+		"resources": [
+			"img/LeftArrow.png",
+			"css/GeRenPingJia.css"
+		]
+	},
+	"jiedan.html": {
+		"resources": [
+			"fonts/glyphicons-halflings-regular.woff",
+			"fonts/glyphicons-halflings-regular.woff2",
+			"css/bootstrap.css",
+			"css/mybootstrap2.css",
+			"css/bootstrap-theme.min.css",
+			"js/kind.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/bootstrap-theme.css",
+			"css/bootstrap.min.css",
+			"img/LeftArrow.png",
+			"css/jiedan.css",
+			"js/jquery.min.js",
+			"dingdan.html",
+			"js/Ajax.js"
+		],
+		"refer": [
+			"dingdan.html"
+		]
+	},
+	"dingdanxiangqing.html": {
+		"resources": [
+			"css/DingDanXiangQing.css",
+			"img/LeftArrow.png",
+			"js/ymqh.js",
+			"js/kind.js",
+			"js/mui.min.js",
+			"GeRenDingDan.html"
+		],
+		"refer": [
+			"GeRenDingDan.html"
+		]
+	},
+	"GeRenDingDan.html": {
+		"resources": [
+			"img/LeftArrow.png",
+			"js/ymqh.js",
+			"js/kind.js",
+			"js/mui.min.js",
+			"dingdanxiangqing.html",
+			"css/GeRenDingDan.css",
+			"js/Ajax.js"
+		],
+		"refer": [
+			"dingdanxiangqing.html"
+		]
+	},
+	"RuanJianPingJia.html": {
+		"resources": [
+			"img/LeftArrow.png",
+			"css/RuanJianPingJia.css"
+		]
+	}
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!--<meta http-equiv="refresh" content="5">-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/mybootstrap2.css" rel="stylesheet">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ymqh.js"></script>
+		<script src="js/kind.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				$.ajax({
+
+					url: 'http://59.110.31.72:80/LRB/php/dingdan.php',
+					type: 'post',
+					data: {
+							
+					},
+					dataType: 'json',
+					success: function(data) {
+						
+						if(data.length>0){
+							$('#dingdan').html('<li class="list-group-item">'+
+		  					'<a class="list_a_weizhi" style="width:80%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: block;color:#000">送达地址</a>'+
+		  					'<span class="" style="float:right;margin-top:-18px;">'+
+		  						'<a style="color: #000000;" >操作</a>'+
+		  					'</span>'+
+		  				'</li>');
+							for(var i = 0; i < data.length; i++) {
+								var html='<li class="list-group-item"  >' +
+									'<a class="list_a_weizhi" style="width:80%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;cursor: pointer;display: block;color:#000">' +
+									data[i].songda_weizhi +
+									'</a>';
+								if(data[i].xiadanren_id!=localStorage.yhid){
+									html=html+'<span class="" style="float:right;margin-top:-18px;">' +
+									'<a style="font-weight: 600;color: #41cf3a;" onclick="clickforward(\'jiedan.html?ddid='+data[i].dingdan_id+'\')" >接单</a></span>'+'</li>';
+								}else{
+									html+='</li>'
+								}
+								$('#dingdan').append(html);
+							}
+						}else{
+							$('#dingdan').html('<li class="list-group-item">没有可接的订单啦~~</li>');
+						}
+							
+					},
+					error: function(data) {
+			//			alert("error:" + data.responseText);
+
+					}
+				});
+
+			}
+
+			function plusReady() { //主界面监听返回键
+				plus.key.addEventListener('backbutton', function() {
+					if(confirm("确认退出？")) {
+						plus.runtime.quit();
+					}
+				}, false);
+				//document.addEventListener('netchange',onloadtq,false);
+			}
+
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+
+			//点击两次返回键	
+			var first = null;
+			mui.back = function() {
+				//首次按键，提示‘再按一次退出应用’
+				if(!first) {
+					first = new Date().getTime();
+					//mui.toast('再按一次退出应用');
+					setTimeout(function() {
+						first = null;
+					}, 1000);
+				} else {
+					if(new Date().getTime() - first < 1000) {
+						if(confirm("确认退出？")) {
+							plus.runtime.quit();
+						}
+					}
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+
+		<!--<nav class="navbar navbar-default navbar-fixed-top" style="background: #00FFFF;">
+	   	  <div class="container-fluid row">	 
+	   		<a class="sd_location" onclick="clickback()"><i class="glyphicon glyphicon-menu-left sd_mapmark"></i></a>
+		  	<div class="sd_mingcheng">订单大厅</div>
+		  	<a class="sd_location" onclick="">
+		  		<i class="glyphicon glyphicon-hand-down sd_mapmark" style="position:absolute;right:25px;top:16px;"></i>
+		  		<div style="position:absolute;right:10px;top:14px;font-size:12px;color:white;">发布</div>
+		  	</a>
+		  </div>
+		</nav>-->
+
+		<div id="cpzx_tm" style="width: 100%;font-size: 15px;font-family:  " 新宋体 ";font-weight: bold;">
+			<div id="hidebg"></div>
+            <div id="hidebox" onclick="hides()">
+            	<a href="zijixiadan.html">
+            		<button	 class="bt">自己下单</button>
+            	</a>
+		        <a href="xiadan.html">
+		        	<button class="bt">别人下单</button>
+		        </a>
+            </div>
+    <script type="text/javascript">
+		function show()  //显示隐藏层和弹出层
+		{
+	   	var hideobj=document.getElementById("hidebg");
+	   	hideobj.style.display="block";  //显示隐藏层
+	   	hideobj.style.height=document.documentElement.clientHeight+"px";  //设置隐藏层的高度为当前页面高度
+	   	document.getElementById("hidebox").style.display="block";  //显示弹出层
+		}
+		function hide()  //去除隐藏层和弹出层
+		{
+	   document.getElementById("hidebg").style.display="none";
+	   document.getElementById("hidebox").style.display="none";
+		}
+    </script>
+			<ul class="list-group" id="dingdan">
+				
+				<li class="list-group-item"  onclick="clickforward('jiedan.html')">
+					努力加载ing~~~
+  					<!--<a class="list_a_weizhi" style="width:80%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;cursor: pointer;display: block;color:#000">订单名称</a>
+  					<span class="" style="float:right;margin-top:-18px;">
+  						<a style="font-weight: 600;color: red;" >接单</a>
+  					</span>-->
+  				</li>  
+			</ul>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ 
+    <link rel="stylesheet" href="css/mui.min.css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/mybootstrap2.css" rel="stylesheet">
+    <title></title>
+    <script src="js/ymqh.js"></script>
+    <script src="js/kind.js"></script>
+		<script type="text/javascript">			
+			function plusReady(){
+				InitPage();
+				plus.key.addEventListener('backbutton',function(){
+					if(confirm("确认退出？")){
+					plus.runtime.quit();
+				}},false);
+			}
+		
+			if(window.plus){
+				plusReady();
+			}
+			else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			
+		//点击两次返回键	
+		var first = null;
+		mui.back = function() {
+		//首次按键，提示‘再按一次退出应用’
+		if (!first) {
+		first = new Date().getTime();
+		//mui.toast('再按一次退出应用');
+		setTimeout(function() {
+		first = null;
+		}, 1000);
+		} else {
+		if (new Date().getTime() - first < 1000) {
+				if(confirm("确认退出？")){
+				plus.runtime.quit();
+			}
+		}
+		}
+		
+		};
+		</script> 
+		<script type="text/javascript">
+			var subpages=['shouye.html','dianhuaben.html','wode.html','gengduo.html'];
+			function InitPage(){
+				var sty={
+					top:'51px',
+					bottom:'51px'
+				};
+				for(i=0;i<4;i++){
+					var pg=plus.webview.create(subpages[i],subpages[i],sty);
+					if(i>0)
+						pg.hide();
+					else
+						pg.show();
+				}
+				
+			}
+		</script>
+</head>
+<body>
+
+	    <nav id="sy_nav" class="navbar navbar-default navbar-fixed-top" style="background: #10a2cd;display: block;">
+	   	  <div class="container-fluid row">
+		  	<div class="sd_mingcheng">首页</div>
+		  	<!--<button class="add-button">登录</button>-->
+		  </div>
+		</nav>
+	
+	    <nav id="dd_nav" class="navbar navbar-default navbar-fixed-top" style="background: #10a2cd;display: none;">
+	   	  <div class="container-fluid row">	 
+<!--	   		<a class="sd_location" onclick="clickback()"><i class="glyphicon glyphicon-menu-left sd_mapmark"></i></a>-->
+		  	<div class="sd_mingcheng">订单大厅</div>
+		  <!--	<a class="sd_location" onclick="clickforward('xiadan.html')">-->
+		  	<a class="sd_location" onclick="isloged()">
+		  		<script>
+		  			function isloged(){if(localStorage.uid==undefined) alertxx("请先登录");else clickforward('xiadan.html');}
+		  		</script>
+		  		<i class="glyphicon glyphicon-hand-down sd_mapmark" style="position:absolute;right:25px;top:16px;"></i>
+		  		<div style="position:absolute;right:10px;top:14px;font-size:12px;color:white;">发布</div>
+		  	</a>
+		  	<!--<div id="hidebg"></div>
+            <div id="hidebox" onclick="hides()">
+            	<a href="zijixiadan.html">
+            		<button	 class="bt">自己下单</button>
+            	</a>
+		        <a href="xiadan.html">
+		        	<button class="bt">别人下单</button>
+		        </a>
+            </div>-->
+		</nav>
+		
+	    <nav id="cx_nav" class="navbar navbar-default navbar-fixed-top" style="background: #10a2cd;display: none;">
+	   	  <div class="container-fluid row">
+		  	<div class="sd_mingcheng">物流查询</div>
+		  </div>
+		</nav>
+		
+	    <nav id="wd_nav" class="navbar navbar-default navbar-fixed-top" style="background: #10a2cd;display: none;">
+	   	  <div class="container-fluid row">
+		  	<div class="sd_mingcheng">我的</div>
+		  </div>
+		</nav>
+		
+        	<!--<iframe id="sy_iframe" src="shouye.html"style="width: 100%;margin-bottom: 51px;height: 600px;"></iframe>-->
+       
+	
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		  <div class="container-fluid row">
+		  	<div id="sy_z" class="xd_gs" onclick="onbt('shouye.html',1)" style="color:#10a2cd">
+		  		<i id="sy_t" class="glyphicon glyphicon-home xd_tubiao" style="color:#10a2cd"></i>
+		  		<div class="sxd_fonts">首页</div>
+		  	</div>
+		  	<div id="dd_z" class="xd_gs" onclick="onbt('dingdan.html',2)">
+		  		<i id="dd_t" class="glyphicon glyphicon-earphone xd_tubiao"></i>
+		  		<div class="sxd_fonts">订单</div>
+		  	</div>
+		  	<div id="cx_z" class="xd_gs" onclick="isuid('chaxun.html',3)">
+		  		<i id="cx_t" class="glyphicon glyphicon-option-horizontal xd_tubiao"><span id="box"></span></i>
+		  		<div class="sxd_fonts">查询</div>
+		  	</div>
+		  	<script>
+		  		function isuid(id,swi){
+//		  			if(localStorage.uid==null){clickforward('denglu.html');}
+//		  			else onpage(id,swi);
+					onbt(id,swi);
+		  		}
+		  	</script>
+		  	<div id="wd_z" class="xd_gs" onclick="isuid('wode.html',4)">
+		  		<i id="wd_t" class="glyphicon glyphicon-user xd_tubiao"></i>
+		  		<div class="sxd_fonts">我的</div>
+		  	</div>
+		  </div>
+	</nav>
+	
+	<script type="text/javascript">
+			function onbt(id,swi){
+				if(phone()){
+					var sty={
+						top:'51px',
+						bottom:'51px'
+					};
+					var pg=plus.webview.getLaunchWebview();
+					var pageid=plus.webview.getWebviewById(id); 
+					if(pageid==pg){
+						pageid.reload();
+					}
+					else{
+						var pg=plus.webview.create(id,id,sty);
+						pg.show();
+					}
+					switch(swi){
+						case 1:onpage('shouye.html',1);
+						break;
+						case 2:onpage('dingdan.html',2);
+						break;
+						case 3:onpage('chaxun.html',3);
+						break;
+						case 4:onpage('wode.html',4);
+						break;
+					}
+				}
+				else{
+					onpage(id,swi);
+				}
+			}
+	</script>
+	
+</body>
+</html>

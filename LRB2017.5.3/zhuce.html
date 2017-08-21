@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/ZhuCe.css"/>
+    <title></title>
+        <script src="js/kind.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/Ajax.js"></script>
+<script>
+function r()
+{
+	var mobile_rule = /^1[358]\d{9}$/;
+	var mima_rule=/(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}/;
+
+if(document.getElementById('dh').value=="")
+{
+alert("请输入电话号码!");
+return;
+}
+else if(document.getElementById('password1').value=="")
+{
+alert("请输入密码!");
+return;
+}
+else if(document.getElementById('password1').value!=document.getElementById('password2').value){
+	alertxx("请输入相同的密码!");
+	return;
+}
+else if(!mima_rule.test(document.getElementById('password2').value)){
+	
+	alert("密码必须是入字母加数字并且不少于6位!");
+	return;
+}
+else if(!mobile_rule.test(document.getElementById('dh').value)){
+	alert("请输入正确的手机号码格式!");
+	return;
+}
+zhuce();
+return true;
+}
+</script>
+</head>
+<body>
+<div class="div0">
+	<div class="div1">
+		<div class="div11" onclick="clickback()">
+		</div>
+		<div class="div12">注册</div>
+	</div>
+	<div class="div2">	
+		<div class="div21">
+			<form action="" method="">
+				<table>
+					<tr>
+						<td align="center" style="width: 30%;">昵称:</td>
+						<td>
+						<input  class="inputstyle" type="text" name="username" id="username">
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 30%;">手机号码:</td>
+						<td>
+						<input  class="inputstyle" type="text" name="dh" id="dh">
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 30%;">设置密码:</td>
+						<td>
+							<input class="inputstyle" type="password" name="password1" id="password1">
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="width: 30%;">密码确认:</td>
+						<td>
+							<input class="inputstyle" type="password" name="password2" id="password2">
+						</td>
+					</tr>
+					<tr style="border-bottom: none;">
+						<td colspan="2" align="center" style="width: 100%;">
+							<input class="buttonstyle" type="button" value="注 册" onclick="r();"/>
+						
+						</td>
+					</tr>
+				</table>
+			</form>		
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>

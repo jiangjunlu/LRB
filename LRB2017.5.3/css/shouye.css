@@ -1,0 +1,138 @@
+body{
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.Sdiv1{
+	width:100%;
+	height: 80px;
+/*	background: #000000;*/
+}
+.Sdiv11{
+	float: left;
+	width:25%;
+	height: 100%;
+}
+.Sdiv111{
+	width:50%;
+	height: 20%;
+	border-right: 3px solid rgba(0, 0, 0, 0.3);
+}
+.Sdiv112{
+	width:100%;
+	height: 60%;
+	background:  url(../img/number1.png) no-repeat;
+	background-position:center center;
+	border: none;
+	
+}
+.Sdiv113{
+	width:50%;
+	height: 20%;
+	border-right: 3px solid rgba(0, 0, 0, 0.3);
+}
+.Sdiv12{
+	float: left;
+	width:75%;
+	height: 80px;
+	/*background: #1B6D85;*/
+	border-bottom: 3px solid rgba(112, 82, 47, 1);
+
+}
+.Sdiv121{
+	float: left;
+	width:80%;
+	height: 100%;
+
+}
+.t0{
+	width: 100%;
+	height: 25%;
+}
+.t1{
+	width: 100%;
+	height: 40%;
+	color: #10a2cd;
+	font-size: 25px;
+	line-height: 31px;
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.t2{
+	width: 100%;
+	height: 17.5%;
+	color: #878e7f;
+	font-size: 12px;
+	line-height: 14px;
+}
+.t3{
+	width: 100%;
+	height: 17.5%;
+	color: #878e7f;
+	font-size: 12px;
+	line-height: 14px;
+}
+.p2{
+	width: 100%;
+	height: 25%;
+	color: #878e7f;
+	font-size: 12px;
+	line-height: 19px;
+}
+.Sdiv122{
+	float: right;
+	width:20%;
+	height: 100%;
+	background:  url(../img/time.png) no-repeat;
+	background-position:center center;
+	border: none;
+
+}
+
+.Sdiv212{
+	width:100%;
+	height: 60%;
+	background:  url(../img/number2.png) no-repeat;
+	background-position:center center;
+	border: none;
+	
+}
+.Sdiv22{
+	float: right;
+	width:75%;
+	height: 80px;
+	/*background: #1B6D85;*/
+	border-bottom: 3px solid rgba(49, 144, 90, 1);
+
+}
+.Sdiv222{
+	float: right;
+	width:20%;
+	height: 100%;
+	background:  url(../img/weixin.png) no-repeat;
+	background-position:center center;
+	border: none;
+
+}
+.Sdiv312{
+	width:100%;
+	height: 60%;
+	background:  url(../img/number3.png) no-repeat;
+	background-position:center center;
+	border: none;
+	
+}
+.Sdiv32{
+	float: right;
+	width:75%;
+	height: 80px;
+	/*background: #1B6D85;*/
+	border-bottom: 3px solid rgba(14, 180, 217, 1);
+
+}
+.Sdiv322{
+	float: right;
+	width:20%;
+	height: 100%;
+	background:  url(../img/phone.png) no-repeat;
+	background-position:center center;
+	border: none;
+
+}
